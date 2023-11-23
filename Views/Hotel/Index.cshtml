@@ -1,0 +1,73 @@
+﻿@model IEnumerable<HotelWebApp.Models.Hotel>
+
+<style>
+    .white-text {
+        color: white; 
+    }
+
+    .black-id {
+        color: black; 
+    }
+</style>
+
+<h2>Índice de Hotéis</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Criar Novo</a>
+</p>
+
+<form class="white-text-form">
+    <table class="table table-bordered text-white">
+        <thead class="thead-dark">
+            <tr>
+                <th class="black-id">ID</th>
+                <th class="white-text">Nome</th>
+                <th class="white-text">Quartos</th>
+                <th class="white-text">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hotel in Model)
+            {
+                <tr>
+                    <td class="black-id">@Html.DisplayFor(modelItem => hotel.Id)</td>
+                    <td class="white-text">@Html.DisplayFor(modelItem => hotel.Nome)</td>
+                    <td class="white-text">
+                        @if (hotel.Quartos.Any())
+                        {
+                            <ul>
+                                @foreach (var quarto in hotel.Quartos)
+                                {
+                                    <li>@quarto.Numero</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <span class="empty-space"></span>
+                        }
+                    </td>
+                    <td class="white-text">
+                        <a asp-action="Edit" asp-route-id="@hotel.Id" class="btn btn-primary">Editar</a>
+                        <a asp-action="Details" asp-route-id="@hotel.Id" class="btn btn-info">Detalhes</a>
+                        <a asp-action="Delete" asp-route-id="@hotel.Id" class="btn btn-info">Deletar</a>
+
+                       
+                        @if (hotel.Quartos.Any())
+                        {
+                            <a asp-action="EditQuarto" asp-route-id="@hotel.Quartos.First().Id" class="btn btn-warning">Editar Quarto</a>
+                            <a asp-action="DetailsQuarto" asp-route-id="@hotel.Quartos.First().Id" class="btn btn-info">Detalhes do Quarto</a>
+                            <a asp-action="DeleteQuarto" asp-route-id="@hotel.Quartos.First().Id" class="btn btn-danger">Excluir Quarto</a>
+                        }
+                        else
+                        {
+                            <span class="empty-space"></span>
+                        }
+
+                        <a asp-action="AdicionarQuarto" asp-route-hotelId="@hotel.Id" class="btn btn-secondary">Adicionar Quarto</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,15 @@
+﻿@model HotelWebApp.Models.Quarto
+
+<h2>Excluir Quarto</h2>
+
+<div>
+    <h4>Tem certeza que deseja excluir o quarto número @Model.Numero?</h4>
+    <div>
+        <form asp-action="DeleteQuarto" asp-controller="Hotel" method="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="HotelId" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-action="Details" asp-controller="Hotel" asp-route-id="@Model.HotelId" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>

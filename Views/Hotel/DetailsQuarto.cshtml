@@ -1,0 +1,12 @@
+﻿@model HotelWebApp.Models.Quarto
+
+<h2>Detalhes do Quarto</h2>
+
+<div>
+    <h4>Número: @Model.Numero</h4>
+
+   
+
+    <a asp-action="EditQuarto" asp-controller="Hotel" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Details" asp-controller="Hotel" asp-route-id="@Model.HotelId" class="btn btn-secondary">Voltar para Detalhes do Hotel</a>
+</div>

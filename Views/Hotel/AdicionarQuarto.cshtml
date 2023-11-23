@@ -1,0 +1,25 @@
+﻿@model HotelWebApp.Models.Quarto
+
+<h2>Adicionar Quarto</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<form asp-controller="Hotel" asp-action="AdicionarQuarto" method="post">
+    <input type="hidden" asp-for="HotelId" value="@ViewBag.HotelId" />
+
+    <div class="form-group">
+        <label asp-for="Numero">Número do Quarto:</label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+
+
+    <!-- Adicione mais campos conforme necessário para o seu modelo Quarto -->
+
+    <button type="submit" class="btn btn-primary">Adicionar Quarto</button>
+</form>
