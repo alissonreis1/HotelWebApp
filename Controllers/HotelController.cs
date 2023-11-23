@@ -180,11 +180,11 @@ namespace HotelWebApp.Controllers
             try
             {
                 _hotelRepository.UpdateQuarto(quarto);
-                return RedirectToAction("Details", new { id = quarto.HotelId }); // Redireciona de volta para os detalhes do hotel
+                return RedirectToAction("Details", new { id = quarto.HotelId }); 
             }
             catch (Exception ex)
             {
-                // Lida com erros
+                
                 ViewBag.ErrorMessage = "Erro ao editar quarto: " + ex.Message;
                 return View(quarto);
             }
@@ -223,12 +223,12 @@ namespace HotelWebApp.Controllers
             try
             {
                 _hotelRepository.DeleteQuarto(id);
-                // Você pode redirecionar para os detalhes do hotel ou outra página conforme necessário
+                
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
-                // Lida com erros
+                
                 ViewBag.ErrorMessage = "Erro ao excluir quarto: " + ex.Message;
                 return View("DeleteQuarto", _hotelRepository.GetQuartoById(id));
             }

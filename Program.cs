@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Adicione serviços ao contêiner.
 builder.Services.AddControllersWithViews();
 
-// Adicione o contexto do banco de dados antes de construir o aplicativo
+
 builder.Services.AddDbContext<HotelContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
