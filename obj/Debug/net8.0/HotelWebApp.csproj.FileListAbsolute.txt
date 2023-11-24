@@ -135,3 +135,4 @@ C:\Users\Alisson\source\repos\HotelWebSolution\HotelWebApp\obj\Debug\net8.0\refi
 C:\Users\Alisson\source\repos\HotelWebSolution\HotelWebApp\obj\Debug\net8.0\HotelWebApp.pdb
 C:\Users\Alisson\source\repos\HotelWebSolution\HotelWebApp\obj\Debug\net8.0\HotelWebApp.genruntimeconfig.cache
 C:\Users\Alisson\source\repos\HotelWebSolution\HotelWebApp\obj\Debug\net8.0\ref\HotelWebApp.dll
+C:\Users\Alisson\source\repos\HotelWebSolution\HotelWebApp\obj\Debug\net8.0\HotelWebApp.sourcelink.json
